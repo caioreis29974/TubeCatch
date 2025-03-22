@@ -1,23 +1,37 @@
 from customtkinter import *
+from tkinter import PhotoImage
 from pytubefix import YouTube
 from pytubefix.cli import on_progress
 
 def start_download():
     url = url_entry.get()
     if url:
+        status_label.configure(text="Starting Download...", text_color="#000080")
+        app.update()
         try:
             yt = YouTube(url, on_progress_callback= on_progress)
             ys = yt.streams.get_highest_resolution()
             ys.download(output_path="saves")
-            status_label.configure(text="Download Completed!", text_color="#000080")
+            status_label.configure(text="Download Completed!", text_color="#002080")
+            show_confirmation()
         except Exception as e:
             status_label.configure(text=f"Erro: {str(e)}", text_color="#B22222")
     else:
         status_label.configure(text="Please enter a valid URL!", text_color="#fff")
 
+def show_confirmation():
+    confirmation_window = CTkToplevel()
+    confirmation_window.geometry("300x150")
+    confirmation_window.title("Download Completed")
+    CTkLabel(master=confirmation_window, text="Video downloaded successfully!",font=("Arial Black", 14), text_color="#000080").pack(pady=30)
+    CTkButton(master=confirmation_window, text="OK", fg_color="#00008B", hover_color="#000080", command=confirmation_window.destroy).pack()
+    confirmation_window.grab_set()
+    confirmation_window.transient(app)
+
 app = CTk()
 app.geometry("800x600")
 app.title("TubeCatch")
+app.iconbitmap("./assets/icon_main.ico")
 set_appearance_mode("dark")
 
 main_frame = CTkFrame(master=app, fg_color="#1C1C1C", corner_radius=12)
