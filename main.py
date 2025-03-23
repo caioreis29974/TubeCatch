@@ -72,17 +72,23 @@ main_frame.pack(pady=20, padx=20, fill="both", expand=True)
 
 CTkLabel(master=main_frame, text="TubeCatch", font=("Arial Black", 20), text_color="#0000CD").pack(pady=10)
 
-url_entry = CTkEntry(master=main_frame, width=600, placeholder_text="Enter video URL", border_color="#191970", border_width=2)
-url_entry.pack(pady=10)
+input_frame = CTkFrame(master=main_frame, fg_color="transparent")
+input_frame.pack(fill="x", padx=20, pady=10)
+
+url_entry = CTkEntry(master=input_frame, width=400, placeholder_text="Enter video URL", border_color="#191970", border_width=2)
+url_entry.pack(side="left", padx=(0, 10), fill="x", expand=True)
 
 download_type = StringVar(value="Video")
-type_combobox = CTkComboBox(master=main_frame, variable=download_type, values=["Video", "Audio"])
-type_combobox.pack(pady=10)
+type_combobox = CTkComboBox(master=input_frame, variable=download_type, values=["Video", "Audio"], width=150)
+type_combobox.pack(side="left")
 
 d_button = CTkButton(master=main_frame, text="Download", fg_color="#00008B", hover_color="#000080", command=start_download)
 d_button.pack(pady=10)
 
 status_label = CTkLabel(master=main_frame, text="", font=("Arial", 14))
 status_label.pack(pady=10)
+
+footer_label = CTkLabel(master=main_frame, text="© 2025 Developed by CaioXyZ", font=("Arial", 12), text_color="#808080")
+footer_label.pack(side="bottom", pady=10)
 
 app.mainloop()
