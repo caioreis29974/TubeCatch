@@ -1,5 +1,13 @@
-# TubeCatch
-TubeCatch is an open-source YouTube video and audio downloader with a graphical user interface (GUI) built using `customtkinter`. It allows users to download videos in MP4 format or extract audio in MP3 format easily.
+
+<h1 align=center>TubeCatch</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/github/last-commit/caioreis29974/TubeCatch" alt="Último Commit">
+  <img src="https://img.shields.io/github/commit-activity/y/caioreis29974/TubeCatch.svg" alt="Atividade de Commit">
+  <img src="https://img.shields.io/github/license/caioreis29974/TubeCatch.svg" alt="License">
+</p>
+
+<p align=center>TubeCatch is an open-source YouTube video and audio downloader with a graphical user interface (GUI) built using `customtkinter`. It allows users to download videos in MP4 format or extract audio in MP3 format easily.</p>
 
 ## Features
 - Download YouTube videos in MP4 format
