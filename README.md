@@ -1,4 +1,3 @@
-
 <h1 align=center>TubeCatch</h1>
 
 <p align="center">
@@ -8,6 +7,12 @@
 </p>
 
 <p align=center>TubeCatch is an open-source YouTube video and audio downloader with a graphical user interface (GUI) built using `customtkinter`. It allows users to download videos in MP4 format or extract audio in MP3 format easily.</p>
+
+## Screenshot
+
+<p align="center">
+  <img src="assets/image.png" alt="TubeCatch Screenshot" width="500">
+</p>
 
 ## Features
 - Download YouTube videos in MP4 format
