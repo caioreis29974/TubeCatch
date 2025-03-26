@@ -63,6 +63,7 @@ def show_confirmation():
 
 app = CTk()
 app.geometry("800x600")
+app.minsize(width=600, height=300)
 app.title("TubeCatch")
 app.iconbitmap("./assets/icon_main.ico")
 set_appearance_mode("dark")
